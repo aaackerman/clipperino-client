@@ -66,12 +66,12 @@ class AdminNavbar extends React.Component {
                     <span className="avatar avatar-sm rounded-circle">
                       <img
                         alt="..."
-                        src={require("assets/img/theme/team-4-800x800.jpg")}
+                        src="https://media-exp1.licdn.com/dms/image/C4D03AQHa3zLAVy2ybA/profile-displayphoto-shrink_200_200/0?e=1591228800&v=beta&t=7_P7t1yPXSC3M-fpx3CMm73ozMI_-A4dkWEOKSJ_WKs"
                       />
                     </span>
                     <Media className="ml-2 d-none d-lg-block">
                       <span className="mb-0 text-sm font-weight-bold">
-                        Jessica Jones
+                        alexiconz
                       </span>
                     </Media>
                   </Media>
