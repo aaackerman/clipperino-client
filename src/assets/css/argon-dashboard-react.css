@@ -13824,58 +13824,6 @@ a.btn-icon-only {
   transform: translate(50%, -50%);
 }
 
-.chart {
-  position: relative;
-  height: 350px;
-}
-
-.chart-sm {
-  height: 230px;
-}
-
-.chart-legend {
-  display: flex;
-  justify-content: center;
-  margin-top: 2.5rem;
-  font-size: 0.875rem;
-  text-align: center;
-  color: #8898aa;
-}
-
-.chart-legend-item {
-  display: inline-flex;
-  align-items: center;
-}
-.chart-legend-item + .chart-legend-item {
-  margin-left: 1rem;
-}
-
-.chart-legend-indicator {
-  display: inline-block;
-  width: 0.5rem;
-  height: 0.5rem;
-  margin-right: 0.375rem;
-  border-radius: 50%;
-}
-
-#chart-tooltip {
-  z-index: 0;
-}
-#chart-tooltip .arrow {
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%) translateX(-0.5rem);
-}
-
-.chart-info-overlay {
-  position: absolute;
-  top: 0;
-  left: 5%;
-  max-width: 350px;
-  padding: 20px;
-  z-index: 1;
-}
-
 .close {
   transition: all 0.15s ease;
 }
