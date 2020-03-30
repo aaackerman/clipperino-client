@@ -34,7 +34,7 @@ const ClipCard = () => {
         </CardHeader>
         <CardBody>
           <iframe
-            src={embedUrl}
+            src={`${embedUrl}&autoplay=false`}
             width="100%"
             height="360"
             frameborder="0"
