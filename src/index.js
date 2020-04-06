@@ -1,31 +1,51 @@
-import React from "react";
-import { render } from "react-dom";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import React from 'react';
+import { render } from 'react-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from 'react-router-dom';
 
-import "assets/plugins/nucleo/css/nucleo.css";
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import "assets/scss/argon-dashboard-react.scss";
+import 'assets/plugins/nucleo/css/nucleo.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'assets/scss/argon-dashboard-react.scss';
 
-import AdminLayout from "layouts/Admin.js";
-import AuthLayout from "layouts/Auth.js";
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from '@apollo/react-hooks';
+import { ClipContextProvider } from './contexts/useClipsContext';
 
-import ApolloClient from "apollo-boost";
-import { ApolloProvider } from "@apollo/react-hooks";
+import Layout from './layouts/Layout';
+import routes from './routes';
 
 const client = new ApolloClient({
-  uri: "http://localhost:4000/graphql"
+  uri: 'http://localhost:4000/graphql'
 });
+
+const RoutesList = () =>
+  routes.map(({ path, component: Component }) => (
+    <Route
+      path={path}
+      render={(routeProps) => (
+        <Layout {...routeProps}>
+          <Component />
+        </Layout>
+      )}
+    />
+  ));
 
 const App = () => (
   <ApolloProvider client={client}>
-    <BrowserRouter>
-      <Switch>
-        <Route path="/admin" render={props => <AdminLayout {...props} />} />
-        <Route path="/auth" render={props => <AuthLayout {...props} />} />
-        <Redirect from="/" to="/admin/index" />
-      </Switch>
-    </BrowserRouter>
+    <ClipContextProvider>
+      <Router>
+        <Switch>
+          <RoutesList />
+          <Redirect from="/" to="/clips" />
+          <Redirect from="*" to="/clips" />
+        </Switch>
+      </Router>
+    </ClipContextProvider>
   </ApolloProvider>
 );
 
-render(<App />, document.getElementById("root"));
+render(<App />, document.getElementById('root'));

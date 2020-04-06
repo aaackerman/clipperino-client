@@ -1,6 +1,6 @@
-import React from "react";
-import { NavLink as NavLinkRRD, Link } from "react-router-dom";
-import { PropTypes } from "prop-types";
+import React from 'react';
+import { NavLink as NavLinkRRD, Link } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
 
 import {
   Collapse,
@@ -22,7 +22,7 @@ import {
   Container,
   Row,
   Col
-} from "reactstrap";
+} from 'reactstrap';
 
 class Sidebar extends React.Component {
   state = {
@@ -34,7 +34,7 @@ class Sidebar extends React.Component {
   }
   // verifies if routeName is the one active (in browser input)
   activeRoute(routeName) {
-    return this.props.location.pathname.indexOf(routeName) > -1 ? "active" : "";
+    return this.props.location.pathname.indexOf(routeName) > -1 ? 'active' : '';
   }
   // toggles collapse between opened and closed (true/false)
   toggleCollapse = () => {
@@ -49,18 +49,18 @@ class Sidebar extends React.Component {
     });
   };
   // creates the links that appear in the left menu / Sidebar
-  createLinks = routes => {
-    return routes.map((prop, key) => {
+  createLinks = (routes) => {
+    return routes.map(({ path, name, icon }) => {
       return (
-        <NavItem key={key}>
+        <NavItem key={`${path}-key`}>
           <NavLink
-            to={prop.layout + prop.path}
+            to={path}
             tag={NavLinkRRD}
             onClick={this.closeCollapse}
             activeClassName="active"
           >
-            <i className={prop.icon} />
-            {prop.name}
+            <i className={icon} />
+            {name}
           </NavLink>
         </NavItem>
       );
@@ -68,6 +68,7 @@ class Sidebar extends React.Component {
   };
   render() {
     const { routes, logo } = this.props;
+
     let navbarBrandProps;
     if (logo && logo.innerLink) {
       navbarBrandProps = {
@@ -77,7 +78,7 @@ class Sidebar extends React.Component {
     } else if (logo && logo.outterLink) {
       navbarBrandProps = {
         href: logo.outterLink,
-        target: "_blank"
+        target: '_blank'
       };
     }
     return (
@@ -124,7 +125,7 @@ class Sidebar extends React.Component {
                   <span className="avatar avatar-sm rounded-circle">
                     <img
                       alt="..."
-                      src={require("assets/img/theme/team-1-800x800.jpg")}
+                      src={require('assets/img/theme/team-1-800x800.jpg')}
                     />
                   </span>
                 </Media>
@@ -150,7 +151,7 @@ class Sidebar extends React.Component {
                   <span>Support</span>
                 </DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+                <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                   <i className="ni ni-user-run" />
                   <span>Logout</span>
                 </DropdownItem>

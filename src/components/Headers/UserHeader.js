@@ -1,16 +1,16 @@
-import React from "react";
-import { Button, Container, Row, Col } from "reactstrap";
+import React from 'react';
+import { Button, Container, Row, Col } from 'reactstrap';
 
 const UserHeader = () => (
   <>
     <div
       className="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
       style={{
-        minHeight: "600px",
+        minHeight: '600px',
         backgroundImage:
-          "url(" + require("assets/img/theme/profile-cover.jpg") + ")",
-        backgroundSize: "cover",
-        backgroundPosition: "center top"
+          'url(' + require('assets/img/theme/profile-cover.jpg') + ')',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center top'
       }}
     >
       <span className="mask bg-gradient-default opacity-8" />
@@ -25,7 +25,7 @@ const UserHeader = () => (
             <Button
               color="info"
               href="https://www.twitch.tv/alexiconz"
-              onClick={() => (window.location = "http://twitch.tv/alexiconz")}
+              onClick={() => (window.location = 'http://twitch.tv/alexiconz')}
             >
               Watch on Twitch
             </Button>

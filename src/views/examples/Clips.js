@@ -1,9 +1,9 @@
-import React from "react";
-import { Container, Row } from "reactstrap";
-import Header from "components/Headers/Header.js";
-import ClipCard from "components/Clips/ClipCard.jsx";
+import React from 'react';
+import { Container, Row } from 'reactstrap';
+import Header from '../../components/Headers/Header';
+import ClipCard from '../../components/Clips/ClipCard.jsx';
 
-class Index extends React.Component {
+class Clips extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,4 +30,4 @@ class Index extends React.Component {
   }
 }
 
-export default Index;
+export default Clips;

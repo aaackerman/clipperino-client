@@ -1,20 +1,9 @@
-import React from "react";
-import { Row, Col, Card, CardHeader, CardBody } from "reactstrap";
-import { useQuery } from "@apollo/react-hooks";
-import { gql } from "apollo-boost";
-
-const CLIPS = gql`
-  {
-    clips {
-      title
-      embedUrl
-      creatorName
-    }
-  }
-`;
+import React from 'react';
+import { Row, Col, Card, CardHeader, CardBody } from 'reactstrap';
+import { useClipsContext } from '../../contexts/useClipsContext';
 
 const ClipCard = () => {
-  const { loading, error, data } = useQuery(CLIPS);
+  const { loading, error, data } = useClipsContext();
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;

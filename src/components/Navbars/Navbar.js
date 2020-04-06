@@ -1,6 +1,5 @@
-
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   DropdownMenu,
   DropdownItem,
@@ -10,9 +9,9 @@ import {
   Nav,
   Container,
   Media
-} from "reactstrap";
+} from 'reactstrap';
 
-const AdminNavbar = ({ brandText })=> (
+const MainNavbar = ({ brandText }) => (
   <>
     <Navbar className="navbar-top navbar-dark" expand="md" id="navbar-main">
       <Container fluid>
@@ -60,7 +59,7 @@ const AdminNavbar = ({ brandText })=> (
                 <span>Support</span>
               </DropdownItem>
               <DropdownItem divider />
-              <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                 <i className="ni ni-user-run" />
                 <span>Logout</span>
               </DropdownItem>
@@ -70,6 +69,6 @@ const AdminNavbar = ({ brandText })=> (
       </Container>
     </Navbar>
   </>
-)
+);
 
-export default AdminNavbar;
+export default MainNavbar;
